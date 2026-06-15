@@ -13,6 +13,7 @@ namespace CrawlerServiceShared.Contracts;
 
 public sealed class CrawlerServiceApiClient : ReCounterApiClient
 {
+    // ReSharper disable once ConvertToPrimaryConstructor
     public CrawlerServiceApiClient(ILogger logger, IHttpClientFactory httpClientFactory, string server, string? apiKey,
         bool useConsole) : base(logger, httpClientFactory, new ReCounterMessageHubClient(server, apiKey), server,
         apiKey, useConsole)
