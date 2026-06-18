@@ -6,4 +6,5 @@ public sealed class RunTaskRequest
 {
     public string? TaskName { get; set; }
     public List<string> StartPoints { get; set; } = [];
+    public int NewPartsCreateLimit { get; set; }
 }
