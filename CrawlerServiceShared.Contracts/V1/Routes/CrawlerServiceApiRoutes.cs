@@ -18,5 +18,8 @@ public static class CrawlerServiceApiRoutes
 
         // POST api/v1/crawler/testonepage
         public const string TestOnePage = "/testonepage";
+
+        // GET api/v1/crawler/precheck
+        public const string PreCheck = "/precheck";
     }
 }
