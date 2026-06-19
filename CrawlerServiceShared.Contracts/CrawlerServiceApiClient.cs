@@ -35,8 +35,7 @@ public sealed class CrawlerServiceApiClient : ReCounterApiClient
     {
         string afterServerAddress = CrawlerServiceApiRoutes.CrawlerRoute.CrawlerBase +
                                     CrawlerServiceApiRoutes.CrawlerRoute.PreCheck + "/?name=" +
-                                    Uri.EscapeDataString(name) +
-                                    (string.IsNullOrWhiteSpace(pageAddress)
+                                    Uri.EscapeDataString(name) + (string.IsNullOrWhiteSpace(pageAddress)
                                         ? string.Empty
                                         : "&url=" + Uri.EscapeDataString(pageAddress));
         return GetAsyncReturn<CrawlerPreCheckResult>(afterServerAddress, false, cancellationToken);
