@@ -18,4 +18,9 @@ public static class CrawlerServiceErrors
     {
         return new Error { Code = nameof(BatchWithNameNotFound), Name = $"Batch with name {batchName} not found" };
     }
+
+    public static Error TaskWithNameNotFound(string? taskName)
+    {
+        return new Error { Code = nameof(TaskWithNameNotFound), Name = $"Task with name {taskName} not found" };
+    }
 }
