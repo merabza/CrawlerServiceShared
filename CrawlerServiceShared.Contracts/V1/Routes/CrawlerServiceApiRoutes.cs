@@ -22,4 +22,57 @@ public static class CrawlerServiceApiRoutes
         // GET api/v1/crawler/precheck
         public const string PreCheck = "/precheck";
     }
+
+    public static class TaskRoute
+    {
+        public const string TaskBase = "/tasks";
+
+        public const string List = "/list";
+        public const string GetByName = "/getbyname";
+        public const string Create = "/create";
+        public const string Update = "/update";
+        public const string Delete = "/delete";
+
+        public const string StartPointGet = "/startpointget";
+        public const string StartPointAdd = "/startpointadd";
+        public const string StartPointUpdate = "/startpointupdate";
+        public const string StartPointDelete = "/startpointdelete";
+    }
+
+    public static class BatchRoute
+    {
+        public const string BatchBase = "/batches";
+
+        public const string List = "/list";
+        public const string GetByName = "/getbyname";
+        public const string Create = "/create";
+        public const string Update = "/update";
+        public const string Delete = "/delete";
+
+        public const string HostByBatchList = "/hostbybatchlist";
+        public const string HostByBatchAdd = "/hostbybatchadd";
+        public const string HostByBatchRemove = "/hostbybatchremove";
+    }
+
+    public static class HostRoute
+    {
+        public const string HostBase = "/hosts";
+
+        public const string List = "/list";
+        public const string GetByName = "/getbyname";
+        public const string Create = "/create";
+        public const string Update = "/update";
+        public const string Delete = "/delete";
+    }
+
+    public static class SchemeRoute
+    {
+        public const string SchemeBase = "/schemes";
+
+        public const string List = "/list";
+        public const string GetByName = "/getbyname";
+        public const string Create = "/create";
+        public const string Update = "/update";
+        public const string Delete = "/delete";
+    }
 }
