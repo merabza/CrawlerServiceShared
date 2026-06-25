@@ -23,4 +23,22 @@ public static class CrawlerServiceErrors
     {
         return new Error { Code = nameof(TaskWithNameNotFound), Name = $"Task with name {taskName} not found" };
     }
+
+    public static Error HostWithNameNotFound(string? hostName)
+    {
+        return new Error { Code = nameof(HostWithNameNotFound), Name = $"Host with name {hostName} not found" };
+    }
+
+    public static Error SchemeWithNameNotFound(string? schemeName)
+    {
+        return new Error { Code = nameof(SchemeWithNameNotFound), Name = $"Scheme with name {schemeName} not found" };
+    }
+
+    public static Error StartPointNotFound(int taskId, string? startPoint)
+    {
+        return new Error
+        {
+            Code = nameof(StartPointNotFound), Name = $"Start point {startPoint} for task id {taskId} not found"
+        };
+    }
 }

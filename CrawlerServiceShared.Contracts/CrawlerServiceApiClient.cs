@@ -12,7 +12,7 @@ using SystemTools.SystemToolsShared.Errors;
 
 namespace CrawlerServiceShared.Contracts;
 
-public sealed class CrawlerServiceApiClient : ReCounterApiClient
+public sealed partial class CrawlerServiceApiClient : ReCounterApiClient
 {
     // ReSharper disable once ConvertToPrimaryConstructor
     public CrawlerServiceApiClient(ILogger logger, IHttpClientFactory httpClientFactory, string server, string? apiKey,
