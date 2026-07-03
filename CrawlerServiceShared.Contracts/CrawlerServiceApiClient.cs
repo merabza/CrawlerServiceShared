@@ -21,13 +21,13 @@ public sealed partial class CrawlerServiceApiClient : ReCounterApiClient
     {
     }
 
-    public ValueTask<Option<Error[]>> RunBatch(string batchName, int newPartsCreateLimit,
+    public ValueTask<Option<Error[]>> RunBatch(string batchName, int newPartsCreateLimit, int progressDelaySeconds,
         CancellationToken cancellationToken = default)
     {
         return PostAsync(
             CrawlerServiceApiRoutes.CrawlerRoute.CrawlerBase + CrawlerServiceApiRoutes.CrawlerRoute.RunBatch +
-            "/?batchName=" + Uri.EscapeDataString(batchName) + "&newPartsCreateLimit=" + newPartsCreateLimit,
-            cancellationToken);
+            "/?batchName=" + Uri.EscapeDataString(batchName) + "&newPartsCreateLimit=" + newPartsCreateLimit +
+            "&progressDelaySeconds=" + progressDelaySeconds, cancellationToken);
     }
 
     public Task<OneOf<CrawlerPreCheckResult, Error[]>> PreCheck(string name, string? pageAddress,
