@@ -4,5 +4,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="SonarAnalyzer.CSharp" Version="10.25.0.139117" />
+    <PackageVersion Include="SystemTools.ReCounterContracts" Version="1.0.9686.33588" />
   </ItemGroup>
 </Project>
