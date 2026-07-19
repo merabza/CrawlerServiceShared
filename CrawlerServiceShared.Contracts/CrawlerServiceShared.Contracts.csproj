@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <PackageReference Include="SystemTools.ReCounterContracts" />
+    <ProjectReference Include="..\..\SystemTools\SystemTools.ReCounterContracts\SystemTools.ReCounterContracts.csproj" />
   </ItemGroup>
 
 </Project>
