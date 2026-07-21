@@ -35,7 +35,7 @@ public sealed class CrawlerServiceApiClient : ReCounterApiClient
         CancellationToken cancellationToken = default)
     {
         string afterServerAddress = CrawlerServiceApiRoutes.CrawlerRoute.CrawlerBase +
-                                    CrawlerServiceApiRoutes.CrawlerRoute.PreCheck + "/?name=" +
+                                    CrawlerServiceApiRoutes.CrawlerRoute.PreCheck + "/?batchName=" +
                                     Uri.EscapeDataString(name) + (string.IsNullOrWhiteSpace(pageAddress)
                                         ? string.Empty
                                         : "&url=" + Uri.EscapeDataString(pageAddress));
@@ -223,6 +223,14 @@ public sealed class CrawlerServiceApiClient : ReCounterApiClient
         return DeleteAsync(
             CrawlerServiceApiRoutes.TaskRoute.TaskBase + CrawlerServiceApiRoutes.TaskRoute.Delete + "/?name=" +
             Uri.EscapeDataString(taskName), cancellationToken);
+    }
+
+    public ValueTask<Option<Error[]>> ClearTaskFetchedData(string taskName,
+        CancellationToken cancellationToken = default)
+    {
+        return DeleteAsync(
+            CrawlerServiceApiRoutes.TaskRoute.TaskBase + CrawlerServiceApiRoutes.TaskRoute.ClearFetchedData +
+            "/?name=" + Uri.EscapeDataString(taskName), cancellationToken);
     }
 
     public async Task<OneOf<TaskStartPointDto?, Error[]>> GetStartPoint(int taskId, string startPoint,
