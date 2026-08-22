@@ -170,7 +170,8 @@ public sealed class CrawlerServiceApiClient : ReCounterApiClient
         return result.Match<OneOf<SchemeDto?, ErrorOmd[]>>(wrapper => wrapper.Value, errors => errors);
     }
 
-    public Task<OneOf<SchemeDto, ErrorOmd[]>> CreateScheme(SchemeDto scheme, CancellationToken cancellationToken = default)
+    public Task<OneOf<SchemeDto, ErrorOmd[]>> CreateScheme(SchemeDto scheme,
+        CancellationToken cancellationToken = default)
     {
         return PostAsyncReturn<SchemeDto>(
             CrawlerServiceApiRoutes.SchemeRoute.SchemeBase + CrawlerServiceApiRoutes.SchemeRoute.Create, false,
@@ -189,6 +190,7 @@ public sealed class CrawlerServiceApiClient : ReCounterApiClient
             CrawlerServiceApiRoutes.SchemeRoute.SchemeBase + CrawlerServiceApiRoutes.SchemeRoute.Delete + "/?name=" +
             Uri.EscapeDataString(schemeName), cancellationToken);
     }
+
     public Task<OneOf<List<TaskDto>, ErrorOmd[]>> GetTasksList(CancellationToken cancellationToken = default)
     {
         return GetAsyncReturn<List<TaskDto>>(
@@ -265,6 +267,4 @@ public sealed class CrawlerServiceApiClient : ReCounterApiClient
             CrawlerServiceApiRoutes.TaskRoute.TaskBase + CrawlerServiceApiRoutes.TaskRoute.StartPointDelete +
             "/?taskId=" + taskId + "&startPoint=" + Uri.EscapeDataString(startPoint), cancellationToken);
     }
-
-
 }

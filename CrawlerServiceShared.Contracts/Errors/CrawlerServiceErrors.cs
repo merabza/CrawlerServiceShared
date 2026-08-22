@@ -31,7 +31,10 @@ public static class CrawlerServiceErrors
 
     public static ErrorOmd SchemeWithNameNotFound(string? schemeName)
     {
-        return new ErrorOmd { Code = nameof(SchemeWithNameNotFound), Name = $"Scheme with name {schemeName} not found" };
+        return new ErrorOmd
+        {
+            Code = nameof(SchemeWithNameNotFound), Name = $"Scheme with name {schemeName} not found"
+        };
     }
 
     public static ErrorOmd StartPointNotFound(int taskId, string? startPoint)
