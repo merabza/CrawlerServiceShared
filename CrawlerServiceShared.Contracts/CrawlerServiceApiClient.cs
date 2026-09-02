@@ -47,8 +47,7 @@ public sealed class CrawlerServiceApiClient : ReCounterApiClient
             JsonSerializer.Serialize(request), cancellationToken);
     }
 
-    public ValueTask<Result> TestOnePage(TestOnePageRequest request,
-        CancellationToken cancellationToken = default)
+    public ValueTask<Result> TestOnePage(TestOnePageRequest request, CancellationToken cancellationToken = default)
     {
         return PostAsync(
             CrawlerServiceApiRoutes.CrawlerRoute.CrawlerBase + CrawlerServiceApiRoutes.CrawlerRoute.TestOnePage, true,
@@ -62,8 +61,7 @@ public sealed class CrawlerServiceApiClient : ReCounterApiClient
             cancellationToken);
     }
 
-    public Task<Result<BatchDto>> GetBatchByName(string batchName,
-        CancellationToken cancellationToken = default)
+    public Task<Result<BatchDto>> GetBatchByName(string batchName, CancellationToken cancellationToken = default)
     {
         return GetAsyncReturn<BatchDto>(
             CrawlerServiceApiRoutes.BatchRoute.BatchBase + CrawlerServiceApiRoutes.BatchRoute.GetByName + "/?name=" +
@@ -98,8 +96,7 @@ public sealed class CrawlerServiceApiClient : ReCounterApiClient
             "/?batchName=" + Uri.EscapeDataString(batchName), false, cancellationToken);
     }
 
-    public ValueTask<Result> AddHostByBatch(HostByBatchRequest request,
-        CancellationToken cancellationToken = default)
+    public ValueTask<Result> AddHostByBatch(HostByBatchRequest request, CancellationToken cancellationToken = default)
     {
         return PostAsync(
             CrawlerServiceApiRoutes.BatchRoute.BatchBase + CrawlerServiceApiRoutes.BatchRoute.HostByBatchAdd, false,
@@ -122,8 +119,7 @@ public sealed class CrawlerServiceApiClient : ReCounterApiClient
             cancellationToken);
     }
 
-    public async Task<Result<HostDto?>> GetHostByName(string hostName,
-        CancellationToken cancellationToken = default)
+    public async Task<Result<HostDto?>> GetHostByName(string hostName, CancellationToken cancellationToken = default)
     {
         Result<ApiNullableResult<HostDto>> result = await GetAsyncReturn<ApiNullableResult<HostDto>>(
             CrawlerServiceApiRoutes.HostRoute.HostBase + CrawlerServiceApiRoutes.HostRoute.GetByName + "/?name=" +
@@ -167,8 +163,7 @@ public sealed class CrawlerServiceApiClient : ReCounterApiClient
         return result.IsFailure ? Result.Failure<SchemeDto?>(result.Error) : Result.Success(result.Value.Value);
     }
 
-    public Task<Result<SchemeDto>> CreateScheme(SchemeDto scheme,
-        CancellationToken cancellationToken = default)
+    public Task<Result<SchemeDto>> CreateScheme(SchemeDto scheme, CancellationToken cancellationToken = default)
     {
         return PostAsyncReturn<SchemeDto>(
             CrawlerServiceApiRoutes.SchemeRoute.SchemeBase + CrawlerServiceApiRoutes.SchemeRoute.Create, false,
@@ -195,8 +190,7 @@ public sealed class CrawlerServiceApiClient : ReCounterApiClient
             cancellationToken);
     }
 
-    public async Task<Result<TaskDto?>> GetTaskByName(string taskName,
-        CancellationToken cancellationToken = default)
+    public async Task<Result<TaskDto?>> GetTaskByName(string taskName, CancellationToken cancellationToken = default)
     {
         Result<ApiNullableResult<TaskDto>> result = await GetAsyncReturn<ApiNullableResult<TaskDto>>(
             CrawlerServiceApiRoutes.TaskRoute.TaskBase + CrawlerServiceApiRoutes.TaskRoute.GetByName + "/?name=" +
@@ -224,8 +218,7 @@ public sealed class CrawlerServiceApiClient : ReCounterApiClient
             Uri.EscapeDataString(taskName), cancellationToken);
     }
 
-    public ValueTask<Result> ClearTaskFetchedData(string taskName,
-        CancellationToken cancellationToken = default)
+    public ValueTask<Result> ClearTaskFetchedData(string taskName, CancellationToken cancellationToken = default)
     {
         return DeleteAsync(
             CrawlerServiceApiRoutes.TaskRoute.TaskBase + CrawlerServiceApiRoutes.TaskRoute.ClearFetchedData +
@@ -250,8 +243,7 @@ public sealed class CrawlerServiceApiClient : ReCounterApiClient
             JsonSerializer.Serialize(request), cancellationToken);
     }
 
-    public Task<Result> UpdateStartPoint(TaskStartPointDto startPoint,
-        CancellationToken cancellationToken = default)
+    public Task<Result> UpdateStartPoint(TaskStartPointDto startPoint, CancellationToken cancellationToken = default)
     {
         return PutAsync(CrawlerServiceApiRoutes.TaskRoute.TaskBase + CrawlerServiceApiRoutes.TaskRoute.StartPointUpdate,
             JsonSerializer.Serialize(startPoint), cancellationToken);
