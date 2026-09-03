@@ -61,11 +61,12 @@ public sealed class CrawlerServiceApiClient : ReCounterApiClient
             cancellationToken);
     }
 
-    public Task<Result<BatchDto>> GetBatchByName(string batchName, CancellationToken cancellationToken = default)
+    public async Task<Result<BatchDto?>> GetBatchByName(string batchName, CancellationToken cancellationToken = default)
     {
-        return GetAsyncReturn<BatchDto>(
+        Result<ApiNullableResult<BatchDto>> result = await GetAsyncReturn<ApiNullableResult<BatchDto>>(
             CrawlerServiceApiRoutes.BatchRoute.BatchBase + CrawlerServiceApiRoutes.BatchRoute.GetByName + "/?name=" +
             Uri.EscapeDataString(batchName), false, cancellationToken);
+        return result.IsFailure ? Result.Failure<BatchDto?>(result.Error) : Result.Success(result.Value.Value);
     }
 
     public Task<Result<BatchDto>> CreateBatch(BatchDto batch, CancellationToken cancellationToken = default)
