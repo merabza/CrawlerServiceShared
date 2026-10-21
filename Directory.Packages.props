@@ -1,11 +1,11 @@
-<Project>
+﻿<?xml version="1.0" encoding="utf-8"?><Project>
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="Microsoft.Extensions.Http" Version="10.0.13" />
     <PackageVersion Include="SonarAnalyzer.CSharp" Version="10.35.0.4138" />
-    <PackageVersion Include="SystemTools.ReCounterContracts" Version="1.0.9790.24772" />
-    <PackageVersion Include="SystemTools.SystemToolsShared" Version="1.0.9790.24772" />
+    <PackageVersion Include="SystemTools.ReCounterContracts" Version="1.0.9790.27014" />
+    <PackageVersion Include="SystemTools.SystemToolsShared" Version="1.0.9790.27014" />
   </ItemGroup>
 </Project>
