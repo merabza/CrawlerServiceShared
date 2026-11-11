@@ -6,7 +6,7 @@
   <ItemGroup>
     <PackageVersion Include="Microsoft.Extensions.Http" Version="11.0.0" />
     <PackageVersion Include="SonarAnalyzer.CSharp" Version="10.35.0.4138" />
-    <PackageVersion Include="SystemTools.ReCounterContracts" Version="1.0.9808.33287" />
-    <PackageVersion Include="SystemTools.SystemToolsShared" Version="1.0.9808.33287" />
+    <PackageVersion Include="SystemTools.ReCounterContracts" Version="1.0.9811.42356" />
+    <PackageVersion Include="SystemTools.SystemToolsShared" Version="1.0.9811.42356" />
   </ItemGroup>
 </Project>
